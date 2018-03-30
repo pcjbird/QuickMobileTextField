@@ -9,8 +9,8 @@
 
 # QuickMobileTextField
 ### A Chinese mainland area mobile phone number input textfield. 中国大陆地区手机号码输入文本框。
-
-
+ 
+ 
 ##  安装 / Installation
 
 方法一：`QuickMobileTextField` is available through CocoaPods. To install it, simply add the following line to your Podfile:
