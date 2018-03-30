@@ -154,4 +154,67 @@
     return YES;
 }
 
+
+#pragma mark - Placeholder
+
+- (void)setPlaceholderColor:(UIColor *)placeholderColor
+{
+    _placeholderColor = placeholderColor;
+    if (self.placeholder)
+    {
+        [self updateAttributedPlaceholderIfNeeded];
+    }
+}
+
+- (void)setPlaceholder:(NSString *)placeholder
+{
+    [super setPlaceholder:placeholder];
+    if (self.placeholderColor)
+    {
+        [self updateAttributedPlaceholderIfNeeded];
+    }
+}
+
+- (void)updateAttributedPlaceholderIfNeeded
+{
+    self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.placeholder attributes:@{NSForegroundColorAttributeName: self.placeholderColor}];
+}
+
+#pragma mark - TextInsets
+
+/// 获取UIEdgeInsets在水平方向上的值
+CG_INLINE CGFloat UIEdgeInsetsGetHorizontalValue(UIEdgeInsets insets)
+{
+    return insets.left + insets.right;
+}
+
+/// 获取UIEdgeInsets在垂直方向上的值
+CG_INLINE CGFloat UIEdgeInsetsGetVerticalValue(UIEdgeInsets insets)
+{
+    return insets.top + insets.bottom;
+}
+
+CG_INLINE CGRect CGRectInsetEdges(CGRect rect, UIEdgeInsets insets)
+{
+    rect.origin.x += insets.left;
+    rect.origin.y += insets.top;
+    rect.size.width -= UIEdgeInsetsGetHorizontalValue(insets);
+    rect.size.height -= UIEdgeInsetsGetVerticalValue(insets);
+    return rect;
+}
+
+- (CGRect)textRectForBounds:(CGRect)bounds
+{
+    bounds = CGRectInsetEdges(bounds, self.textInsets);
+    CGRect resultRect = [super textRectForBounds:bounds];
+    return resultRect;
+}
+
+- (CGRect)editingRectForBounds:(CGRect)bounds
+{
+    bounds = CGRectInsetEdges(bounds, self.textInsets);
+    return [super editingRectForBounds:bounds];
+}
+
+
 @end

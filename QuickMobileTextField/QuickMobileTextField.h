@@ -8,6 +8,10 @@
 //  框架名称:QuickMobileTextField
 //  框架功能:A Chinese mainland area mobile phone number input textfield. 中国大陆地区手机号码输入文本框。
 //  修改记录:
+//     pcjbird    2018-03-30  Version:1.0.2 Build:201803300003
+//                            1.支持设置placeholder颜色
+//                            2.支持设置文字在输入框内的padding
+//
 //     pcjbird    2018-03-30  Version:1.0.1 Build:201803300002
 //                            1.修复可以无限输入的问题
 //
@@ -16,6 +20,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreGraphics/CoreGraphics.h>
 
 //! Project version number for QuickMobileTextField.
 FOUNDATION_EXPORT double QuickMobileTextFieldVersionNumber;
@@ -34,6 +39,16 @@ FOUNDATION_EXPORT const unsigned char QuickMobileTextFieldVersionString[];
 /**
  *@brief 手机号码(不含空格)
  */
-@property(nonatomic, strong) NSString*  mobile;
+@property(nonatomic, strong) IBInspectable NSString*  mobile;
+
+/**
+ *@brief  修改 placeholder 的颜色，默认是 UIColorPlaceholder。
+ */
+@property(nonatomic, strong) IBInspectable UIColor *placeholderColor;
+
+/**
+ *@brief  文字在输入框内的 padding。
+ */
+@property(nonatomic, assign) UIEdgeInsets textInsets;
 
 @end
