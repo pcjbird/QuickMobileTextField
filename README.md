@@ -10,10 +10,10 @@
 # QuickMobileTextField
 ### A Chinese mainland area mobile phone number input textfield. 中国大陆地区手机号码输入文本框。
  
+
+## 演示 / Demo
  
- ## 演示 / Demo
- 
- <p align="center"><img src="demo.jpg" title="demo"></p>
+<p align="center"><img src="demo.jpg" title="demo"></p>
  
  
 ##  安装 / Installation
