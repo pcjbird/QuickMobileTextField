@@ -22,6 +22,7 @@
 {
     if (self = [super initWithFrame:frame]) {
         [self addTarget:self action:@selector(reformatAsPhoneNumber:) forControlEvents:UIControlEventEditingChanged];
+        self.delegate = self;
     }
     return self;
 }
@@ -30,6 +31,7 @@
     self = [super initWithCoder:coder];
     if (self) {
         [self addTarget:self action:@selector(reformatAsPhoneNumber:) forControlEvents:UIControlEventEditingChanged];
+        self.delegate = self;
     }
     return self;
 }

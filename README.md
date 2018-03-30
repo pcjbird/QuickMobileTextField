@@ -11,6 +11,11 @@
 ### A Chinese mainland area mobile phone number input textfield. 中国大陆地区手机号码输入文本框。
  
  
+ ## 演示 / Demo
+ 
+ <p align="center"><img src="demo.jpg" title="demo"></p>
+ 
+ 
 ##  安装 / Installation
 
 方法一：`QuickMobileTextField` is available through CocoaPods. To install it, simply add the following line to your Podfile:
@@ -19,6 +24,27 @@
 pod 'QuickMobileTextField'
 ```
   
+## 使用 / Usage
+     
+```
+#import <QuickMobileTextField/QuickMobileTextField.h>
+     
+@interface ViewController ()
+     
+@property (weak, nonatomic) IBOutlet QuickMobileTextField *mobileTextField;
+
+@end
+     
+@implementation ViewController
+     
+- (void)viewDidLoad {
+     [super viewDidLoad];
+     // Do any additional setup after loading the view, typically from a nib.
+     self.mobileTextField.mobile = @"1709";
+}
+     
+@end
+```
   
 ## 关注我们 / Follow us
   
