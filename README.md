@@ -24,12 +24,10 @@
 ##  安装 / Installation
 
 方法一：`QuickMobileTextField` is available through CocoaPods. To install it, simply add the following line to your Podfile:
-
 ```
 pod 'QuickMobileTextField'
 ```
 ## 使用 / Usage
-     
 ```
 #import <QuickMobileTextField/QuickMobileTextField.h>
 
