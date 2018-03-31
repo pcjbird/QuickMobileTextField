@@ -23,6 +23,8 @@
 /* Begin PBXBuildFile section */
 		896FF8DD206E31BD000AF630 /* QuickMobileTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 896FF8DB206E31BD000AF630 /* QuickMobileTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		896FF8E4206E321B000AF630 /* QuickMobileTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 896FF8E3206E321B000AF630 /* QuickMobileTextField.m */; };
+		89A21769206F7AF900C15DF5 /* QuickMaterialMobileTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 89A21767206F7AF900C15DF5 /* QuickMaterialMobileTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		89A2176A206F7AF900C15DF5 /* QuickMaterialMobileTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A21768206F7AF900C15DF5 /* QuickMaterialMobileTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		896FF8E6206E3586000AF630 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		896FF8E7206E3586000AF630 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		896FF8EA206E35CE000AF630 /* QuickMobileTextField.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = QuickMobileTextField.podspec; sourceTree = "<group>"; };
+		89A21767206F7AF900C15DF5 /* QuickMaterialMobileTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuickMaterialMobileTextField.h; sourceTree = "<group>"; };
+		89A21768206F7AF900C15DF5 /* QuickMaterialMobileTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuickMaterialMobileTextField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,8 @@
 			children = (
 				896FF8DB206E31BD000AF630 /* QuickMobileTextField.h */,
 				896FF8E3206E321B000AF630 /* QuickMobileTextField.m */,
+				89A21767206F7AF900C15DF5 /* QuickMaterialMobileTextField.h */,
+				89A21768206F7AF900C15DF5 /* QuickMaterialMobileTextField.m */,
 				896FF8DC206E31BD000AF630 /* Info.plist */,
 			);
 			path = QuickMobileTextField;
@@ -91,6 +97,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				896FF8DD206E31BD000AF630 /* QuickMobileTextField.h in Headers */,
+				89A21769206F7AF900C15DF5 /* QuickMaterialMobileTextField.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89A2176A206F7AF900C15DF5 /* QuickMaterialMobileTextField.m in Sources */,
 				896FF8E4206E321B000AF630 /* QuickMobileTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

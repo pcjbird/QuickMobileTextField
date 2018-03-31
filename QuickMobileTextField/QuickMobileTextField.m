@@ -21,23 +21,24 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        self.autocorrectionType = UITextAutocorrectionTypeNo;
-        self.keyboardType = UIKeyboardTypeDecimalPad;
-        [self addTarget:self action:@selector(reformatAsPhoneNumber:) forControlEvents:UIControlEventEditingChanged];
-        self.delegate = self;
+        [self setupInit];
     }
     return self;
 }
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
-    self = [super initWithCoder:coder];
-    if (self) {
-        self.autocorrectionType = UITextAutocorrectionTypeNo;
-        self.keyboardType = UIKeyboardTypeDecimalPad;
-        [self addTarget:self action:@selector(reformatAsPhoneNumber:) forControlEvents:UIControlEventEditingChanged];
-        self.delegate = self;
+    if (self = [super initWithCoder:coder]) {
+        [self setupInit];
     }
     return self;
+}
+
+-(void) setupInit
+{
+    self.autocorrectionType = UITextAutocorrectionTypeNo;
+    self.keyboardType = UIKeyboardTypeDecimalPad;
+    [self addTarget:self action:@selector(reformatAsPhoneNumber:) forControlEvents:UIControlEventEditingChanged];
+    self.delegate = self;
 }
 
 -(NSString *)mobile
