@@ -23,9 +23,25 @@
 @implementation QuickMaterialMobileTextField
 
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    if (self = [super initWithFrame:frame]) {
+        [self updateMaterialPlaceholder:YES];
+    }
+    return self;
+}
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    if (self = [super initWithCoder:coder]) {
+        [self updateMaterialPlaceholder:YES];
+    }
+    return self;
+}
+
 -(void)reformatAsPhoneNumber:(UITextField *)textField
 {
     [super reformatAsPhoneNumber:textField];
+    [self setNeedsDisplay];
     if (!self.text || self.text.length > 0)
     {
         self.placeholderLabel.alpha = 1;
@@ -37,19 +53,39 @@
     CGFloat damping = 0.6;
     CGFloat velocity = 1;
     
+    __weak typeof(self) weakSelf = self;
     [UIView animateWithDuration:duration delay:delay usingSpringWithDamping:damping initialSpringVelocity:velocity options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        if (!self.text || self.text.length <= 0)
+        if (!weakSelf.text || weakSelf.text.length <= 0)
         {
-            self.placeholderLabel.transform = CGAffineTransformIdentity;
+            weakSelf.placeholderLabel.transform = CGAffineTransformIdentity;
         }
         else
         {
-            self.placeholderLabel.transform = CGAffineTransformMakeTranslation(0, -self.placeholderLabel.frame.size.height - 5);
+            CGAffineTransform transform = CGAffineTransformIdentity;
+            transform = CGAffineTransformScale(transform, 0.6, 0.6);
+            transform = CGAffineTransformTranslate(transform, 0, -weakSelf.textInsets.top);
+            weakSelf.placeholderLabel.transform = transform;
         }
-     }
-     completion:^(BOOL finished) {
-         
-     }];
+    }
+                     completion:^(BOOL finished) {
+                         
+                     }];
+}
+
+-(void)setTextInsets:(UIEdgeInsets)textInsets
+{
+    [super setTextInsets:textInsets];
+    [self updateMaterialPlaceholder:NO];
+}
+
+- (CGRect)editingRectForBounds:(CGRect)bounds
+{
+    bounds = [super editingRectForBounds:bounds];
+    if(self.text && self.text.length > 0)
+    {
+        bounds.origin.y += self.textInsets.top/2.0f;
+    }
+    return bounds;
 }
 
 #pragma mark - Placeholder
@@ -57,25 +93,38 @@
 - (void)setPlaceholderColor:(UIColor *)placeholderColor
 {
     [super setPlaceholderColor:placeholderColor];
-    if([self.placeholderColor isKindOfClass:[UILabel class]])
+    if([self.placeholderLabel isKindOfClass:[UILabel class]])
     {
-        self.placeholderLabel.attributedText = self.attributedPlaceholder;
+        [self updateMaterialPlaceholder:NO];
     }
 }
+
 
 - (void)setPlaceholder:(NSString *)placeholder
 {
     [super setPlaceholder:placeholder];
+    [self updateMaterialPlaceholder:YES];
     
-    if (![self.placeholderColor isKindOfClass:[UILabel class]])
+}
+
+-(void) updateMaterialPlaceholder:(BOOL) bResetText
+{
+    if (![self.placeholderLabel isKindOfClass:[UILabel class]])
     {
-        UILabel* placeHolderLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 6, 0, self.frame.size.height)];
+        UILabel* placeHolderLabel = [[UILabel alloc] initWithFrame:[self textRectForBounds:self.bounds]];
+        placeHolderLabel.layer.anchorPoint = CGPointMake(0.0f, 0.0f);
         [self addSubview:placeHolderLabel];
         self.placeholderLabel = placeHolderLabel;
     }
+    self.placeholderLabel.frame = [self textRectForBounds:self.bounds];
     self.placeholderLabel.alpha = self.placeholderLabel.alpha;
-    self.placeholderLabel.attributedText = self.attributedPlaceholder;
-    [self.placeholderLabel sizeToFit];
+    if(bResetText)
+    {
+        self.placeholderLabel.attributedText = self.attributedPlaceholder;
+    }
+    NSDictionary *attributes = @{NSForegroundColorAttributeName: self.placeholderColor ? self.placeholderColor : [self.textColor colorWithAlphaComponent:0.8], NSFontAttributeName : self.font};
+    self.placeholderLabel.attributedText = [[NSAttributedString alloc] initWithString:self.placeholderLabel.text ?: @"" attributes: attributes];
+    self.attributedPlaceholder = nil;
 }
 
 @end

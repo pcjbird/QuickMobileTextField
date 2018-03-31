@@ -35,6 +35,7 @@
 
 -(void) setupInit
 {
+    _textInsets = UIEdgeInsetsMake(0, 0, 0, 0);
     self.autocorrectionType = UITextAutocorrectionTypeNo;
     self.keyboardType = UIKeyboardTypeDecimalPad;
     [self addTarget:self action:@selector(reformatAsPhoneNumber:) forControlEvents:UIControlEventEditingChanged];

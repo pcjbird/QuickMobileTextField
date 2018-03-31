@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet QuickMobileTextField *mobileTextField;
 @property (weak, nonatomic) IBOutlet QuickMobileTextField *nextMobileTextField;
+@property (weak, nonatomic) IBOutlet QuickMobileTextField *materialMobileTextField;
 @end
 
 @implementation ViewController
@@ -22,6 +23,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.mobileTextField.mobile = @"1709";
     self.nextMobileTextField.textInsets = UIEdgeInsetsMake(4, 15, 4, 15);
+    self.materialMobileTextField.textInsets = UIEdgeInsetsMake(15, 15, 15, 15);
 }
 
 
