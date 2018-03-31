@@ -18,7 +18,8 @@
  4. 预设键盘类型和关闭自动校正，自动限制输入长度。
  5. 支持设置预输入手机号，支持直接获取非格式化的手机号文本(不含空格)。
  6. 支持 xib, storyboard。
-    
+ 7. 支持 Material 风格。
+
 ## 演示 / Demo
  
 <p align="center"><img src="demo.gif" title="demo"></p>
