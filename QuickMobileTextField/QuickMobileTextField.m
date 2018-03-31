@@ -21,6 +21,8 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
+        self.autocorrectionType = UITextAutocorrectionTypeNo;
+        self.keyboardType = UIKeyboardTypeDecimalPad;
         [self addTarget:self action:@selector(reformatAsPhoneNumber:) forControlEvents:UIControlEventEditingChanged];
         self.delegate = self;
     }
@@ -30,6 +32,8 @@
 {
     self = [super initWithCoder:coder];
     if (self) {
+        self.autocorrectionType = UITextAutocorrectionTypeNo;
+        self.keyboardType = UIKeyboardTypeDecimalPad;
         [self addTarget:self action:@selector(reformatAsPhoneNumber:) forControlEvents:UIControlEventEditingChanged];
         self.delegate = self;
     }

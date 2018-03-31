@@ -8,6 +8,9 @@
 //  框架名称:QuickMobileTextField
 //  框架功能:A Chinese mainland area mobile phone number input textfield. 中国大陆地区手机号码输入文本框。
 //  修改记录:
+//     pcjbird    2018-03-31  Version:1.0.3 Build:201803310001
+//                            1.预设键盘类型和关闭自动校正
+//
 //     pcjbird    2018-03-30  Version:1.0.2 Build:201803300003
 //                            1.支持设置placeholder颜色
 //                            2.支持设置文字在输入框内的padding

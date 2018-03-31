@@ -107,7 +107,6 @@
 				89BC9ADE206E3EEA002DF76B /* Frameworks */,
 				89BC9ADF206E3EEA002DF76B /* Resources */,
 				B074E836E9BDC2C9B656BB38 /* [CP] Embed Pods Frameworks */,
-				4BA9E2970547C5B48C1B06AD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,21 +163,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4BA9E2970547C5B48C1B06AD /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuickMobileTextFieldDemo/Pods-QuickMobileTextFieldDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B074E836E9BDC2C9B656BB38 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
