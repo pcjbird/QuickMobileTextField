@@ -8,7 +8,7 @@
 
 
 # QuickMobileTextField
-### A Chinese mainland area mobile phone number input textfield. 中国大陆地区手机号码输入文本框。
+### A Chinese mainland area mobile phone number input textfield. 中国大陆地区手机号码格式化输入文本框。
     
 ## 特性 / Features
  
