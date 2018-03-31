@@ -28,7 +28,6 @@
 ```
 pod 'QuickMobileTextField'
 ```
-  
 ## 使用 / Usage
      
 ```
@@ -37,7 +36,7 @@ pod 'QuickMobileTextField'
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet QuickMobileTextField *mobileTextField;
-
+@property (weak, nonatomic) IBOutlet QuickMobileTextField *nextMobileTextField;
 @end
 
 @implementation ViewController
@@ -46,11 +45,11 @@ pod 'QuickMobileTextField'
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.mobileTextField.mobile = @"1709";
+    self.nextMobileTextField.textInsets = UIEdgeInsetsMake(4, 15, 4, 15);
 }
 
 @end
 ```
-  
 ## 关注我们 / Follow us
   
 <a href="https://itunes.apple.com/cn/app/iclock-一款满足-挑剔-的翻页时钟与任务闹钟/id1128196970?pt=117947806&ct=com.github.pcjbird.QuickMobileTextField&mt=8"><img src="https://github.com/pcjbird/AssetsExtractor/raw/master/iClock.gif" width="400" title="iClock - 一款满足“挑剔”的翻页时钟与任务闹钟"></a>    
