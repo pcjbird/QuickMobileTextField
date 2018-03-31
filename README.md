@@ -9,19 +9,18 @@
 
 # QuickMobileTextField
 ### A Chinese mainland area mobile phone number input textfield. 中国大陆地区手机号码输入文本框。
- 
- ## 特性 / Features
+    
+## 特性 / Features
  
  1. 中国大陆地区手机号码 3/4/4 格式化输入。
  2. 支持设置placeholder颜色。
  3. 支持设置文字在输入框内的间距。
  4. 预设键盘类型和关闭自动校正，自动限制输入长度。
-
+    
 ## 演示 / Demo
  
 <p align="center"><img src="demo.gif" title="demo"></p>
- 
- 
+    
 ##  安装 / Installation
 
 方法一：`QuickMobileTextField` is available through CocoaPods. To install it, simply add the following line to your Podfile:
