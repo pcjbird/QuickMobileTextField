@@ -10,6 +10,12 @@
 # QuickMobileTextField
 ### A Chinese mainland area mobile phone number input textfield. 中国大陆地区手机号码输入文本框。
  
+ ## 特性 / Features
+ 
+ 1. 中国大陆地区手机号码 3/4/4 格式化输入。
+ 2. 支持设置placeholder颜色。
+ 3. 支持设置文字在输入框内的间距。
+ 4. 预设键盘类型和关闭自动校正，自动限制输入长度。
 
 ## 演示 / Demo
  
@@ -28,21 +34,21 @@ pod 'QuickMobileTextField'
      
 ```
 #import <QuickMobileTextField/QuickMobileTextField.h>
-     
+
 @interface ViewController ()
-     
+
 @property (weak, nonatomic) IBOutlet QuickMobileTextField *mobileTextField;
 
 @end
-     
+
 @implementation ViewController
-     
+
 - (void)viewDidLoad {
-     [super viewDidLoad];
-     // Do any additional setup after loading the view, typically from a nib.
-     self.mobileTextField.mobile = @"1709";
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
+    self.mobileTextField.mobile = @"1709";
 }
-     
+
 @end
 ```
   
