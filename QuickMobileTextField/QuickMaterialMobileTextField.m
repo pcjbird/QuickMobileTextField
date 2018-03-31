@@ -78,6 +78,16 @@
     [self updateMaterialPlaceholder:NO];
 }
 
+- (CGRect)textRectForBounds:(CGRect)bounds
+{
+    bounds = [super editingRectForBounds:bounds];
+    if(self.text && self.text.length > 0)
+    {
+        bounds.origin.y += self.textInsets.top/2.0f;
+    }
+    return bounds;
+}
+
 - (CGRect)editingRectForBounds:(CGRect)bounds
 {
     bounds = [super editingRectForBounds:bounds];
