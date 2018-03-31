@@ -13,7 +13,7 @@
 
 ## 演示 / Demo
  
-<p align="center"><img src="demo.jpg" title="demo"></p>
+<p align="center"><img src="demo.gif" title="demo"></p>
  
  
 ##  安装 / Installation
