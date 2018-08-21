@@ -160,6 +160,15 @@
     return YES;
 }
 
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if(self.nextdelegate && [self.nextdelegate respondsToSelector:@selector(textFieldShouldReturn:)])
+    {
+        return [self.nextdelegate textFieldShouldReturn:textField];
+    }
+    return YES;
+}
+
 
 #pragma mark - Placeholder
 

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = "QuickMobileTextField"
-    s.version          = "1.0.6"
+    s.version          = "1.0.7"
     s.summary          = "A Chinese mainland area mobile phone number input textfield. 中国大陆地区手机号码输入文本框。"
     s.description      = <<-DESC
     A Chinese mainland area mobile phone number input textfield. 快速集成一个中国大陆地区手机号码输入文本框。

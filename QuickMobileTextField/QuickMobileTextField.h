@@ -8,6 +8,9 @@
 //  框架名称:QuickMobileTextField
 //  框架功能:A Chinese mainland area mobile phone number input textfield. 中国大陆地区手机号码格式化输入文本框。
 //  修改记录:
+//     pcjbird    2018-08-21  Version:1.0.7 Build:201808210001
+//                            1.新增QuickMobileTextFieldDelegate
+//
 //     pcjbird    2018-03-31  Version:1.0.6 Build:201803310004
 //                            1.修正 QuickMaterialMobileTextField 在失去焦点后的显示问题
 //
@@ -43,6 +46,16 @@ FOUNDATION_EXPORT const unsigned char QuickMobileTextFieldVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <QuickMobileTextField/PublicHeader.h>
 
 /**
+ *@brief QuickMobileTextField代理。
+ */
+@protocol QuickMobileTextFieldDelegate <NSObject>
+
+@optional
+- (BOOL)textFieldShouldReturn:(UITextField *)textField;
+
+@end
+
+/**
  *@brief A Chinese mainland area mobile phone number input textfield. 中国大陆地区手机号码格式化输入文本框。
  */
 @interface QuickMobileTextField : UITextField<UITextFieldDelegate>
@@ -63,4 +76,11 @@ FOUNDATION_EXPORT const unsigned char QuickMobileTextFieldVersionString[];
  */
 @property(nonatomic, assign) UIEdgeInsets textInsets;
 
+/**
+ *@brief  代理。
+ */
+@property(nullable, nonatomic,weak)   id<QuickMobileTextFieldDelegate> nextdelegate;
+
 @end
+
+
